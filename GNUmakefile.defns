@@ -200,9 +200,9 @@ endif
 ###############################################################################
 # Please use above options to enable corresponding flags
 ###############################################################################
-
 ifeq ($(USE_GCC), 1)
 	CC = @g++ 
+	override CFLAGS := -std=c++11 $(CFLAGS)
 	PUT_FILENAME = @echo $<
 	ifeq ($(USE_GCC_VERBOSE), 1)
 		CC = g++ 
